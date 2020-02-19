@@ -1,0 +1,16 @@
+import React from "react";
+
+function Card({ clickHandler, id, image, name }) {
+  return (
+    <div className="card-placement">
+      <img
+        src={image}
+        alt={name}
+        className="selected-card"
+        onClick={() => clickHandler(id)}
+      />
+    </div>
+  );
+}
+
+export default Card;
