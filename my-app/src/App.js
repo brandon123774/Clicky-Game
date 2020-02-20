@@ -4,6 +4,7 @@ import Card from "./components/Card";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Navbar from "./components/Navbar";
+import boxes from "./boxes.json";
 
 
 class App extends Component {
@@ -11,7 +12,7 @@ class App extends Component {
     super();
     this.state = {
       isCorrect: true,
-      panels: panels,
+      boxes: boxes,
       score: 0,
       maxScore: 12,
       highScore: 0,
@@ -22,9 +23,9 @@ class App extends Component {
   // click handler function
   handleSaveClick = id => {
     // Variable to hold the panels
-    const panel = this.state.panels;
+    const panels = this.state.boxes;
     // Search through pokemon panels to find the one that matches the clicked id.
-    const panelsClicked = panel.filter(panel => panel.id === id);
+    const panelsClicked = panels.filter(panel => panel.id === id);
 
     // If panel isn't clicked
     if (!panelsClicked[0].clicked) {
@@ -85,7 +86,7 @@ class App extends Component {
 
   // Resets the game
   resetGame = id => {
-    const panels = this.state.panels;
+    const panels = this.state.boxes;
     for (let i = 0; i < panels.length; i++) {
       panels[i].clicked = false;
     }
