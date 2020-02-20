@@ -19,40 +19,40 @@ class App extends Component {
     };
   };
 
-  // Main click handler function
+  // click handler function
   handleSaveClick = id => {
-    // Variable to hold the tiles state.
+    // Variable to hold the panels
     const panel = this.state.panels;
-    // Search through character tiles to find the one that matches the clicked id.
+    // Search through character panels to find the one that matches the clicked id.
     const panelsClicked = panel.filter(panel => panel.id === id);
 
-    // If the tile isn't clicked...
+    // If panel isn't clicked
     if (!panelsClicked[0].clicked) {
-      // ...set it to now be clicked
+      
       panelsClicked[0].clicked = true;
-      // ...call this function to register the correct guess
+      // register the correct guess
       this.handleCorrectClick();
-      // ...add the bouncy animation for correct guess
+      // animation for correct guess
       this.toggleAnimation(true);
 
-      // ... randomize character tiles
-      this.randomizeCharacters(panel);
+      // randomize character panels
+      this.randomizeCharacters(panels);
 
-      this.setState({ panel });
+      this.setState({ panels });
     } else {
       this.handleIncorrectClick();
       this.toggleAnimation(false);
     }
   };
 
-  // Function to randomize the characters
+  // randomize the characters
   randomizeCharacters = characters => {
     characters.sort((a, b) => {
       return 0.5 - Math.random();
     });
   };
 
-  // Handler for correct guesses/clicks
+  // Handler for correct guesses
   handleCorrectClick = () => {
     this.setState({ isCorrect: true });
     if (this.state.score + 1 > this.state.highScore) {
@@ -73,7 +73,7 @@ class App extends Component {
     }
   };
 
-  // Handler for incorrect guesses/clicks
+  // Handler for incorrect guesses
   handleIncorrectClick = () => {
     this.setState({
       message: "Wrong!",
@@ -92,7 +92,7 @@ class App extends Component {
     this.setState({ score: 0 });
   };
 
-  // Render the App component on the page
+  // Render the App
   render() {
     const { message, score, panels, highScore } = this.state;
     return (
