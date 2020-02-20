@@ -23,7 +23,7 @@ class App extends Component {
   handleSaveClick = id => {
     // Variable to hold the panels
     const panel = this.state.panels;
-    // Search through character panels to find the one that matches the clicked id.
+    // Search through pokemon panels to find the one that matches the clicked id.
     const panelsClicked = panel.filter(panel => panel.id === id);
 
     // If panel isn't clicked
@@ -35,8 +35,8 @@ class App extends Component {
       // animation for correct guess
       this.toggleAnimation(true);
 
-      // randomize character panels
-      this.randomizeCharacters(panels);
+      // randomize pokemon panels
+      this.randomizePokemon(panels);
 
       this.setState({ panels });
     } else {
@@ -45,9 +45,9 @@ class App extends Component {
     }
   };
 
-  // randomize the characters
-  randomizeCharacters = characters => {
-    characters.sort((a, b) => {
+  // randomize the pokemon
+  randomizePokemon = pokemon => {
+    pokemon.sort((a, b) => {
       return 0.5 - Math.random();
     });
   };
