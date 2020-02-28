@@ -9,7 +9,7 @@ function Navbar({ message, score, highScore }) {
             className="nav-game"
             href="/"
           >
-            Digimon <br />
+            Pokemon <br />
             Memory Game
           </a>
         </li>

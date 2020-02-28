@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "Blastoise",
+    "image": "./images/blastoise.jpeg"
+  },
+  {
+    "id": 2,
+    "name": "Bulbasaur",
+    "image": "./images/bulbasaur.jpeg"   
+  },
+  {
+    "id": 3,
+    "name": "Charmeleon",
+    "image": "./images/chameleon.jpeg"
+  },
+  {
+    "id": 4,
+    "name": "Charizard",
+    "image": "./images/charizard.jpeg"
+  },
+  {
+    "id": 5,
+    "name": "Charmander",
+    "image": "./images/charmander.jpeg"
+  },
+  {
+    "id": 6,
+    "name": "Ivysaur",
+    "image": "./images/ivysaur.jpeg"
+  },
+  {
+    "id": 7,
+    "name": "Squirtle",
+    "image": "./images/squirtle.jpeg"
+  },
+  {
+    "id": 8,
+    "name": "Venusaur",
+    "image": "./images/venusaur.jpeg"
+  },
+  {
+    "id": 9,
+    "name": "Wartortle",
+    "image": "./images/wartortle.jpeg"
+  },
+  {
+    "id": 10,
+    "name": "Pikachu",
+    "image": "./images/pikachu.jpeg"
+  },
+  {
+    "id": 11,
+    "name": "Snorlax",
+    "image": "./images/snorlax.jpeg"
+  },
+  {
+    "id": 12,
+    "name": "Eevee",
+    "image": "./images/eevee.jpeg"
+  }
+]

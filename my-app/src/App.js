@@ -3,14 +3,13 @@ import './App.css';
 import Card from "./components/Card";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/NavBar";
 import boxes from "./boxes.json";
 
 
 class App extends Component {
-  constructor() {
-    super();
-    this.state = {
+ 
+    state = {
       isCorrect: true,
       boxes: boxes,
       score: 0,
@@ -18,7 +17,7 @@ class App extends Component {
       highScore: 0,
       message: "Click on an image to start"
     };
-  };
+  
 
   // click handler function
   handleSaveClick = id => {
@@ -34,7 +33,7 @@ class App extends Component {
       // register the correct guess
       this.handleCorrectClick();
       // animation for correct guess
-      this.toggleAnimation(true);
+    //  this.toggleAnimation(true);
 
       // randomize pokemon panels
       this.randomizePokemon(panels);
@@ -42,7 +41,7 @@ class App extends Component {
       this.setState({ panels });
     } else {
       this.handleIncorrectClick();
-      this.toggleAnimation(false);
+      //this.toggleAnimation(false);
     }
   };
 
@@ -57,7 +56,7 @@ class App extends Component {
   handleCorrectClick = () => {
     this.setState({ isCorrect: true });
     if (this.state.score + 1 > this.state.highScore) {
-      this.setState({ topScore: this.state.highScore + 1 });
+      this.setState({ highScore: this.state.highScore + 1 });
     }
     if (this.state.score + 1 >= this.state.maxScore) {
       this.setState({
@@ -95,7 +94,7 @@ class App extends Component {
 
   // Render the App
   render() {
-    const { message, score, panels, highScore } = this.state;
+    const { message, score, boxes, highScore } = this.state;
     return (
       <div className="fluid-container">
         <Navbar
@@ -106,8 +105,8 @@ class App extends Component {
         />
         <Header className="bg-header row" />
 
-        <div className="content-center ">
-          {panels.map(({ id, name, image, clicked }) => (
+        <div className="row">
+          {boxes.map(({ id, name, image, clicked }) => (
             <Card
               key={id}
               id={id}

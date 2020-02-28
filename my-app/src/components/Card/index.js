@@ -2,7 +2,7 @@ import React from "react";
 
 function Card({ clickHandler, id, image, name }) {
   return (
-    <div className="card-placement">
+    <div className="col-4">
       <img
         src={image}
         alt={name}
